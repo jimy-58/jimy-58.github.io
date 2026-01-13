@@ -88,10 +88,19 @@ body {
 <body>
 
 <nav class="menu">
-    <a href="/index.html">Inicio</a>
-    <a href="/articulos/index.html">Artículos</a>
-    <a href="/index.html#autor">Sobre el autor</a>
+    <div class="menu-container">
+        <span class="logo-text">Jaime Hernández</span>
+
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+        <div class="menu-links" id="menuLinks">
+            <a href="/index.html">Inicio</a>
+            <a href="/articulos/index.html">Artículos</a>
+            <a href="/index.html#autor">Sobre el autor</a>
+        </div>
+    </div>
 </nav>
+
     <!-- contenido del artículo -->
     
     <div class="container">
