@@ -1,88 +1,170 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- =====================================================
+         METADATOS DEL ARTÍCULO
+    ====================================================== -->
     <meta charset="UTF-8">
     <title>Introducción a la ingeniería de sistemas</title>
     <meta name="author" content="Jaime Hernández Hernández">
     <meta name="description" content="Artículo introductorio sobre ingeniería de sistemas">
+
+    <!-- =====================================================
+         ESTILOS
+    ====================================================== -->
     <style>
+
+        /* ===== Estilos base ===== */
         body {
+            margin: 0;
+            min-height: 100vh;
             font-family: Arial, Helvetica, sans-serif;
             background: #0f172a;
             color: #e5e7eb;
-            margin: 0;
-            padding: 40px;
+            padding-top: 70px; /* espacio para menú fijo */
         }
+
+        a {
+            color: #38bdf8;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* =====================================================
+           MENÚ DE NAVEGACIÓN GLOBAL
+        ====================================================== */
+        .menu {
+            width: 100%;
+            background: #020617;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .menu-container {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+        }
+
+        .logo-text {
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        .menu-links a {
+            margin-left: 20px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            color: #e5e7eb;
+            text-decoration: none;
+        }
+
+        .menu-links a:hover {
+            color: #38bdf8;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            background: none;
+            border: none;
+            color: #e5e7eb;
+            cursor: pointer;
+        }
+
+        /* =====================================================
+           CONTENIDO DEL ARTÍCULO
+        ====================================================== */
         article {
             max-width: 800px;
             margin: auto;
+            padding: 20px;
             line-height: 1.7;
         }
+
         h1 {
             text-align: center;
+            margin-bottom: 10px;
         }
+
         .meta {
             text-align: center;
             font-size: 0.9rem;
             opacity: 0.7;
             margin-bottom: 30px;
         }
-        a {
-            color: #38bdf8;
+
+        /* =====================================================
+           RESPONSIVE
+        ====================================================== */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .menu-links {
+                display: none;
+                flex-direction: column;
+                background: #020617;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+                text-align: center;
+                padding: 15px 0;
+            }
+
+            .menu-links a {
+                margin: 10px 0;
+                display: block;
+            }
+
+            .menu-links.active {
+                display: flex;
+            }
         }
 
-.menu {
-    width: 100%;
-    background: #020617;
-    padding: 15px 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    text-align: center;
-    z-index: 1000;
-}
-
-.menu a {
-    color: #e5e7eb;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
-    font-size: 0.95rem;
-    transition: color 0.3s;
-}
-
-.menu a:hover {
-    color: #38bdf8;
-}
-body {
-    padding-top: 70px;
-}
-
-        
     </style>
 </head>
-<body>
 
 <body>
 
+<!-- =====================================================
+     MENÚ DE NAVEGACIÓN
+====================================================== -->
 <nav class="menu">
-    <a href="/index.html">Inicio</a>
-    <a href="/articulos/index.html">Artículos</a>
-    <a href="/index.html#autor">Sobre el autor</a>
+    <div class="menu-container">
+        <span class="logo-text">Jaime Hernández</span>
+
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+        <div class="menu-links" id="menuLinks">
+            <a href="/index.html">Inicio</a>
+            <a href="/articulos/index.html">Artículos</a>
+            <a href="/index.html#autor">Sobre el autor</a>
+        </div>
+    </div>
 </nav>
 
-<!-- contenido del artículo -->
-
-    
-
+<!-- =====================================================
+     CONTENIDO DEL ARTÍCULO
+====================================================== -->
 <article>
+
     <h1>Introducción a la ingeniería de sistemas</h1>
 
     <div class="meta">
-        Autor: Jaime Hernández Hernández <br>
-        Publicado: 2026
+        Autor: Jaime Hernández Hernández · Publicado: 2026
     </div>
 
+    <!-- ===== Introducción ===== -->
     <p>
         La ingeniería de sistemas es una disciplina que integra
         conocimientos técnicos, analíticos y metodológicos para
@@ -95,13 +177,26 @@ body {
         relacionadas con la ingeniería y la tecnología.
     </p>
 
-<p>
-    <a href="index.html">← Volver a artículos</a> |
-    <a href="../index.html">Volver a página principal</a>
-</p>
+    <!-- =================================================
+         NAVEGACIÓN DEL ARTÍCULO
+    ================================================== -->
+    <p style="margin-top: 40px;">
+        <a href="index.html">← Volver a artículos</a> |
+        <a href="../index.html">Volver a página principal</a>
+    </p>
 
 </article>
 
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+<script>
+    function toggleMenu() {
+        document.getElementById("menuLinks").classList.toggle("active");
+    }
+</script>
+
 </body>
 </html>
+
 
