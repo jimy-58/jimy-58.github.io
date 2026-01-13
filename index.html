@@ -1,149 +1,160 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- =====================================================
+         METADATOS BÁSICOS
+    ====================================================== -->
     <meta charset="UTF-8">
-    <title>En construcción revista digital</title>
-    <meta name="author" content="Jaime Hernánde Hernández">
+    <title>En construcción | Revista digital de ingeniería</title>
+    <meta name="author" content="Jaime Hernández Hernández">
     <meta name="description" content="Revista digital de ingeniería - sitio en construcción">
+
+    <!-- =====================================================
+         ESTILOS GENERALES
+    ====================================================== -->
     <style>
+
+        /* ===== Reset y cuerpo ===== */
         body {
             margin: 0;
-            main-height: 100vh;
+            min-height: 100vh;
             background: #0f172a;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             font-family: Arial, Helvetica, sans-serif;
             color: #e5e7eb;
+            padding-top: 70px; /* espacio para menú fijo */
         }
+
+        /* ===== Contenedor principal ===== */
         .container {
             text-align: center;
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
         }
+
         h1 {
             font-size: 2.5rem;
             margin: 10px 0;
         }
+
         p {
-            opacity: 0.8;
+            opacity: 0.85;
         }
 
+        /* =====================================================
+           ANIMACIÓN GATITO
+        ====================================================== */
         .gato {
-    max-width: 280px;
-    margin: 30px auto;
-    display: block;
-    animation: flotar 3s ease-in-out infinite;
-}
+            max-width: 280px;
+            margin: 30px auto;
+            display: block;
+            animation: flotar 3s ease-in-out infinite;
+        }
 
-.trabajando {
-    font-size: 1rem;
-    letter-spacing: 1px;
-    animation: puntos 1.5s infinite;
-}
+        .trabajando {
+            font-size: 1rem;
+            letter-spacing: 1px;
+            animation: puntos 1.5s infinite;
+        }
 
-@keyframes flotar {
-    0%   { transform: translateY(0); }
-    50%  { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
-}
+        @keyframes flotar {
+            0%   { transform: translateY(0); }
+            50%  { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
 
-@keyframes puntos {
-    0%   { opacity: 0.3; }
-    50%  { opacity: 1; }
-    100% { opacity: 0.3; }
-}
+        @keyframes puntos {
+            0%   { opacity: 0.3; }
+            50%  { opacity: 1; }
+            100% { opacity: 0.3; }
+        }
 
+        /* =====================================================
+           MENÚ DE NAVEGACIÓN GLOBAL
+        ====================================================== */
+        .menu {
+            width: 100%;
+            background: #020617;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
 
-.menu {
-    width: 100%;
-    background: #020617;
-    padding: 15px 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    text-align: center;
-    z-index: 1000;
-}
+        .menu-container {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+        }
 
-.menu a {
-    color: #e5e7eb;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
-    font-size: 0.95rem;
-    transition: color 0.3s;
-}
+        .logo-text {
+            font-weight: bold;
+            font-size: 1rem;
+        }
 
-.menu a:hover {
-    color: #38bdf8;
-}
-body {
-    padding-top: 70px;
-}
+        .menu-links a {
+            color: #e5e7eb;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
 
+        .menu-links a:hover {
+            color: #38bdf8;
+        }
 
-.menu-container {
-    max-width: 1100px;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-}
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            background: none;
+            border: none;
+            color: #e5e7eb;
+            cursor: pointer;
+        }
 
-.logo-text {
-    font-weight: bold;
-    font-size: 1rem;
-}
+        /* =====================================================
+           RESPONSIVE (MÓVIL)
+        ====================================================== */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
 
-.menu-toggle {
-    display: none;
-    font-size: 1.8rem;
-    background: none;
-    border: none;
-    color: #e5e7eb;
-    cursor: pointer;
-}
+            .menu-links {
+                display: none;
+                flex-direction: column;
+                background: #020617;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+                text-align: center;
+                padding: 15px 0;
+            }
 
-.menu-links a {
-    margin-left: 20px;
-}
+            .menu-links a {
+                margin: 10px 0;
+                display: block;
+            }
 
-/* 📱 Responsive */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
+            .menu-links.active {
+                display: flex;
+            }
+        }
 
-    .menu-links {
-        display: none;
-        flex-direction: column;
-        background: #020617;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 100%;
-        text-align: center;
-        padding: 15px 0;
-    }
-
-    .menu-links a {
-        margin: 10px 0;
-        display: block;
-    }
-
-    .menu-links.active {
-        display: flex;
-    }
-}
-
-        
-        
     </style>
 </head>
-<body>
 
 <body>
 
+<!-- =====================================================
+     MENÚ DE NAVEGACIÓN
+====================================================== -->
 <nav class="menu">
     <div class="menu-container">
         <span class="logo-text">Jaime Hernández</span>
@@ -153,57 +164,73 @@ body {
         <div class="menu-links" id="menuLinks">
             <a href="/index.html">Inicio</a>
             <a href="/articulos/index.html">Artículos</a>
-            <a href="/index.html#autor">Sobre el autor</a>
+            <a href="#autor">Sobre el autor</a>
         </div>
     </div>
 </nav>
 
-    <!-- contenido del artículo -->
-    
-    <div class="container">
-       
-        <h1>En construcción</h1>
-        <p><strong>Revista digital de ingeniería</strong></p>
+<!-- =====================================================
+     CONTENIDO PRINCIPAL
+====================================================== -->
+<div class="container">
 
-        <p>
-    <a href="articulos/index.html" style="color:#38bdf8;">
-        Ver artículos
-    </a>
-</p>
+    <h1>En construcción</h1>
+    <p><strong>Revista digital de ingeniería</strong></p>
 
+    <p>
+        <a href="articulos/index.html" style="color:#38bdf8;">
+            Ver artículos
+        </a>
+    </p>
 
-
-            <img src="img/gato-ingeniero.png" 
+    <!-- Gatito ingeniero -->
+    <img src="img/gato-ingeniero.png"
          alt="Gatito ingeniero trabajando"
          class="gato">
 
     <p class="trabajando">Trabajando en ello...</p>
-        <p>Autor: Ingeniero Jaime Hernández Hernández</p>
-        <p>© 2026 Jaime Hernández Hernández. Todos los derechos reservados.</p>
-        <p style="font-size: 0.9rem; opacity: 0.7; max-width: 600px; margin: 15px auto;">
-    El contenido de este sitio web, incluyendo textos, diseños, estructura y concepto,
-    es propiedad intelectual de su autor. Queda prohibida su reproducción total o parcial,
-    distribución o modificación sin autorización expresa del titular de los derechos.
-</p>
-<hr style="margin: 30px auto; width: 60%; opacity: 0.3;">
 
-<section style="max-width: 700px; margin: auto; font-size: 0.95rem; line-height: 1.6;">
-    <h2>Sobre el autor</h2>
-    <img src="img/logo.png"
-         alt="Logo personal del autor"
-         style="max-width:120px; margin: 15px auto; display:block;">
-    
-    <p>
-        Ingeniero en formación en sistemas computacionales, enfocado en el desarrollo de
-        soluciones tecnológicas, análisis de sistemas y creación de proyectos digitales.
-        Este sitio representa un espacio de divulgación técnica, reflexión profesional
-        y publicación de contenidos relacionados con la ingeniería y la tecnología.
+    <!-- Información legal -->
+    <p>Autor: Ingeniero Jaime Hernández Hernández</p>
+    <p>© 2026 Jaime Hernández Hernández. Todos los derechos reservados.</p>
+
+    <p style="font-size: 0.9rem; opacity: 0.7; max-width: 600px; margin: 15px auto;">
+        El contenido de este sitio web, incluyendo textos, diseños, estructura y concepto,
+        es propiedad intelectual de su autor. Queda prohibida su reproducción total o parcial,
+        distribución o modificación sin autorización expresa del titular de los derechos.
     </p>
-</section>
 
+    <hr style="margin: 30px auto; width: 60%; opacity: 0.3;">
 
-    </div>
+    <!-- =================================================
+         SOBRE EL AUTOR
+    ================================================== -->
+    <section id="autor" style="max-width: 700px; margin: auto; font-size: 0.95rem; line-height: 1.6;">
+        <h2>Sobre el autor</h2>
+
+        <img src="img/logo.png"
+             alt="Logo personal del autor"
+             style="max-width:120px; margin: 15px auto; display:block;">
+
+        <p>
+            Ingeniero en formación en sistemas computacionales, enfocado en el desarrollo de
+            soluciones tecnológicas, análisis de sistemas y creación de proyectos digitales.
+            Este sitio representa un espacio de divulgación técnica, reflexión profesional
+            y publicación de contenidos relacionados con la ingeniería y la tecnología.
+        </p>
+    </section>
+
+</div>
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+<script>
+    function toggleMenu() {
+        document.getElementById("menuLinks").classList.toggle("active");
+    }
+</script>
+
 </body>
-
 </html>
 
