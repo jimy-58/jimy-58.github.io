@@ -1,86 +1,183 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- =====================================================
+         METADATOS BÁSICOS
+    ====================================================== -->
     <meta charset="UTF-8">
     <title>Artículos | Revista digital de ingeniería</title>
     <meta name="author" content="Jaime Hernández Hernández">
     <meta name="description" content="Listado de artículos de ingeniería y tecnología">
+
+    <!-- =====================================================
+         ESTILOS
+    ====================================================== -->
     <style>
+
+        /* ===== Estilos base ===== */
         body {
+            margin: 0;
+            min-height: 100vh;
             font-family: Arial, Helvetica, sans-serif;
             background: #0f172a;
             color: #e5e7eb;
-            margin: 0;
-            padding: 40px;
+            padding-top: 70px; /* espacio para menú fijo */
         }
-        h1 {
-            text-align: center;
-        }
-        .articulos {
-            max-width: 800px;
-            margin: auto;
-        }
-        .articulo {
-            border-bottom: 1px solid rgba(255,255,255,0.2);
-            padding: 20px 0;
-        }
+
         a {
             color: #38bdf8;
             text-decoration: none;
         }
+
         a:hover {
             text-decoration: underline;
         }
 
-.menu {
-    width: 100%;
-    background: #020617;
-    padding: 15px 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    text-align: center;
-    z-index: 1000;
-}
+        /* =====================================================
+           MENÚ DE NAVEGACIÓN GLOBAL
+        ====================================================== */
+        .menu {
+            width: 100%;
+            background: #020617;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
 
-.menu a {
-    color: #e5e7eb;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
-    font-size: 0.95rem;
-    transition: color 0.3s;
-}
+        .menu-container {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+        }
 
-.menu a:hover {
-    color: #38bdf8;
-}
-body {
-    padding-top: 70px;
-}
+        .logo-text {
+            font-weight: bold;
+            font-size: 1rem;
+        }
 
-        
+        .menu-links a {
+            margin-left: 20px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            color: #e5e7eb;
+        }
+
+        .menu-links a:hover {
+            color: #38bdf8;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            background: none;
+            border: none;
+            color: #e5e7eb;
+            cursor: pointer;
+        }
+
+        /* =====================================================
+           CONTENIDO DE ARTÍCULOS
+        ====================================================== */
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .volver {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .articulos {
+            max-width: 800px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        .articulo {
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding: 20px 0;
+        }
+
+        .articulo h2 {
+            margin-bottom: 5px;
+        }
+
+        .articulo p {
+            opacity: 0.85;
+        }
+
+        /* =====================================================
+           RESPONSIVE
+        ====================================================== */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .menu-links {
+                display: none;
+                flex-direction: column;
+                background: #020617;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+                text-align: center;
+                padding: 15px 0;
+            }
+
+            .menu-links a {
+                margin: 10px 0;
+                display: block;
+            }
+
+            .menu-links.active {
+                display: flex;
+            }
+        }
+
     </style>
 </head>
-<body>
 
 <body>
 
+<!-- =====================================================
+     MENÚ DE NAVEGACIÓN
+====================================================== -->
 <nav class="menu">
-    <a href="/index.html">Inicio</a>
-    <a href="/articulos/index.html">Artículos</a>
-    <a href="/index.html#autor">Sobre el autor</a>
+    <div class="menu-container">
+        <span class="logo-text">Jaime Hernández</span>
+
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+        <div class="menu-links" id="menuLinks">
+            <a href="/index.html">Inicio</a>
+            <a href="/articulos/index.html">Artículos</a>
+            <a href="/index.html#autor">Sobre el autor</a>
+        </div>
+    </div>
 </nav>
 
-<!-- listado de artículos -->
-
+<!-- =====================================================
+     ENCABEZADO DE LA SECCIÓN
+====================================================== -->
 <h1>Artículos</h1>
-    <p style="text-align:center;">
+
+<p class="volver">
     <a href="../index.html">← Volver a página principal</a>
 </p>
 
-
+<!-- =====================================================
+     LISTADO DE ARTÍCULOS
+====================================================== -->
 <div class="articulos">
+
+    <!-- ===== Artículo 001 ===== -->
     <div class="articulo">
         <h2>
             <a href="articulo-001.html">
@@ -92,8 +189,25 @@ body {
             su impacto y áreas de aplicación.
         </p>
     </div>
+
+    <!-- ===== Artículo 002 (futuro) ===== -->
+    <!--
+    <div class="articulo">
+        <h2><a href="articulo-002.html">Título del artículo</a></h2>
+        <p>Descripción breve del artículo.</p>
+    </div>
+    -->
+
 </div>
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+<script>
+    function toggleMenu() {
+        document.getElementById("menuLinks").classList.toggle("active");
+    }
+</script>
 
 </body>
 </html>
-
