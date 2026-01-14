@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sobre el autor | Revista digital de ingeniería</title>
+
+    <!-- ================= META ================= -->
+    <meta name="author" content="Ing. Jaime Hernández Hernández">
+    <meta name="description" content="Información profesional sobre el autor de la revista digital de ingeniería">
+
+    <!-- ================= CSS GLOBAL ================= -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- ==================================================
+     MENÚ DE NAVEGACIÓN GLOBAL
+================================================== -->
+<nav class="menu">
+    <div class="menu-container">
+        <span class="logo-text">Jaime Hernández</span>
+
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+        <div class="menu-links" id="menuLinks">
+            <a href="index.html">Inicio</a>
+            <a href="articulos/index.html">Artículos</a>
+            <a href="sobre-el-autor.html">Sobre el autor</a>
+        </div>
+    </div>
+</nav>
+
+<!-- ==================================================
+     CONTENIDO PRINCIPAL
+================================================== -->
+<main class="container">
+
+    <section class="text-center">
+        <h1>Sobre el autor</h1>
+
+        <img src="img/logo.png"
+             alt="Logo personal del autor"
+             style="max-width:140px; margin: 20px auto; display:block;">
+    </section>
+
+    <section>
+        <p>
+            <strong>Ing. Jaime Hernández Hernández</strong> es ingeniero en formación
+            en sistemas computacionales, con interés en el desarrollo de soluciones
+            tecnológicas, automatización de procesos, análisis de sistemas y
+            divulgación técnica.
+        </p>
+
+        <p>
+            Esta revista digital nace como un espacio personal y profesional para
+            documentar aprendizajes, compartir conocimientos y publicar artículos
+            relacionados con la ingeniería, la tecnología y el uso práctico de
+            herramientas informáticas.
+        </p>
+
+        <p>
+            El contenido aquí presentado refleja una visión técnica, ética y
+            responsable del ejercicio de la ingeniería, orientada a la mejora
+            continua y al aprendizaje constante.
+        </p>
+    </section>
+
+    <!-- ==================================================
+         DATOS PROFESIONALES
+    ================================================== -->
+    <section>
+        <h2>Perfil profesional</h2>
+
+        <ul>
+            <li>Ingeniería en sistemas computacionales</li>
+            <li>Automatización y scripting</li>
+            <li>Análisis y documentación técnica</li>
+            <li>Desarrollo de proyectos digitales</li>
+        </ul>
+    </section>
+
+    <!-- ==================================================
+         NAVEGACIÓN
+    ================================================== -->
+    <div class="navegacion-articulo">
+        <a href="index.html">← Volver a página principal</a>
+    </div>
+
+</main>
+
+<!-- ==================================================
+     SCRIPT MENÚ RESPONSIVE
+================================================== -->
+<script>
+function toggleMenu() {
+    document.getElementById("menuLinks").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
