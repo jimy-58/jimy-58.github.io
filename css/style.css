@@ -1,13 +1,16 @@
 /* =====================================================
-   ESTILOS GLOBALES
+   CONFIGURACIÓN GLOBAL
 ===================================================== */
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
-    min-height: 100vh;
+    padding-top: 70px; /* Espacio para menú fijo */
     font-family: Arial, Helvetica, sans-serif;
     background: #0f172a;
     color: #e5e7eb;
-    padding-top: 70px; /* espacio para menú fijo */
 }
 
 a {
@@ -20,10 +23,16 @@ a:hover {
 }
 
 /* =====================================================
+   UTILIDADES GENERALES
+===================================================== */
+.text-center {
+    text-align: center;
+}
+
+/* =====================================================
    CONTENEDORES GENERALES
 ===================================================== */
 .container {
-    text-align: center;
     max-width: 900px;
     margin: auto;
     padding: 20px;
@@ -76,7 +85,7 @@ a:hover {
 }
 
 /* =====================================================
-   RESPONSIVE (MENÚ)
+   RESPONSIVE – MENÚ
 ===================================================== */
 @media (max-width: 768px) {
     .menu-toggle {
@@ -143,8 +152,12 @@ a:hover {
 }
 
 .articulo {
-    border-bottom: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     padding: 20px 0;
+}
+
+.articulo h2 {
+    margin-bottom: 8px;
 }
 
 .articulo p {
@@ -152,13 +165,18 @@ a:hover {
 }
 
 /* =====================================================
-   ARTÍCULOS – INDIVIDUAL
+   ARTÍCULOS – DETALLE INDIVIDUAL
 ===================================================== */
-article {
+.articulo-detalle {
     max-width: 800px;
     margin: auto;
     padding: 20px;
     line-height: 1.7;
+}
+
+.articulo-detalle h1 {
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .meta {
@@ -168,11 +186,15 @@ article {
     margin-bottom: 30px;
 }
 
-
 /* =====================================================
-   UTILIDADES DE TEXTO
+   NAVEGACIÓN INFERIOR DE ARTÍCULOS
 ===================================================== */
-.text-center {
+.navegacion-articulo {
+    margin-top: 40px;
     text-align: center;
+}
+
+.navegacion-articulo a {
+    font-weight: bold;
 }
 
