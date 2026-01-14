@@ -198,3 +198,18 @@ a:hover {
     font-weight: bold;
 }
 
+/* =====================================================
+   ARTÍCULOS – NUMERACIÓN AUTOMÁTICA
+===================================================== */
+.articulos {
+    counter-reset: numero-articulo;
+}
+
+.articulo h2::before {
+    counter-increment: numero-articulo;
+    content: "Artículo " counter(numero-articulo) " – ";
+    color: #94a3b8;
+    font-weight: normal;
+}
+
+
