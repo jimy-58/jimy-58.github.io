@@ -1,199 +1,150 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- =====================================================
-         METADATOS
-    ====================================================== -->
     <meta charset="UTF-8">
-    <title>Curso básico de Excel | Tablas y validaciones</title>
-    <meta name="author" content="Ing. Jaime Hernández Hernández">
-    <meta name="description" content="Curso básico de Excel enfocado en tablas técnicas, validación de datos y formatos profesionales">
-
-    <link rel="stylesheet" href="/css/style.css">
+    <title>Artículo 004 – Curso básico de Excel</title>
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
-
 <body>
 
-<!-- =====================================================
-     MENÚ GLOBAL
-====================================================== -->
-<nav class="menu">
-    <div class="menu-container">
-        <span class="logo-text">Jaime Hernández</span>
-        <div class="menu-links">
-            <a href="/index.html">Inicio</a>
-            <a href="/articulos/index.html">Artículos</a>
-            <a href="/sobre-el-autor.html">Sobre el autor</a>
-        </div>
-    </div>
-</nav>
-
-<!-- =====================================================
-     CONTENIDO DEL ARTÍCULO
-====================================================== -->
-<article class="articulo-detalle">
+<main class="articulo-contenido">
 
     <h1>Curso básico de Excel</h1>
 
-    <div class="meta">
-        Autor: <strong>Ing. Jaime Hernández Hernández</strong><br>
-        Publicado: <strong>14-01-2026</strong>
-    </div>
-
-    <!-- =================================================
-         INTRODUCCIÓN
-    ================================================== -->
-    <p>
-        Este curso básico de Excel está diseñado para personas que desean
-        crear tablas más técnicas, profesionales y funcionales utilizando
-        herramientas nativas de Excel, validaciones de datos y formatos
-        personalizados.
-    </p>
-
-    <p>
-        El objetivo es que el participante no solo capture información,
-        sino que construya hojas de cálculo estructuradas, claras y
-        listas para procesos administrativos, técnicos o de análisis.
+    <p class="articulo-intro">
+        En este artículo se presentan técnicas básicas y prácticas de Microsoft Excel
+        orientadas a la creación de tablas profesionales, validación de datos y formatos
+        personalizados para un uso más técnico y eficiente.
     </p>
 
     <hr>
 
-    <!-- =================================================
-         FORMATO COMO TABLA
-    ================================================== -->
-    <h2>Dar formato a una tabla</h2>
+    <section>
+        <h2>Dar formato a la tabla</h2>
+        <p>Para dar formato a una tabla ya creada:</p>
 
-    <ol>
-        <li>Selecciona toda la tabla (filas y columnas).</li>
-        <li>Ve al menú <strong>Inicio</strong>.</li>
-        <li>Selecciona <strong>Dar formato como tabla</strong>.</li>
-        <li>Elige el estilo deseado (claro, medio u oscuro).</li>
-        <li>Confirma la selección de la tabla.</li>
-        <li>Marca la opción <strong>La tabla tiene encabezados</strong>.</li>
-    </ol>
+        <ol>
+            <li>Seleccionamos toda nuestra tabla considerando todas las columnas y filas.</li>
+            <li>En el menú de Excel seleccionamos <strong>Inicio</strong>.</li>
+            <li>Damos clic en <strong>Dar formato como tabla</strong>.</li>
+            <li>Elegimos el estilo que más nos agrade (claro, medio, oscuro o colores básicos).</li>
+            <li>Se mostrará la ventana <em>¿Dar formato como tabla?</em>.</li>
+            <li>Marcamos la opción <strong>La tabla tiene encabezados</strong>.</li>
+        </ol>
+    </section>
 
-    <p>
-        Este formato permite trabajar con filtros, fórmulas estructuradas
-        y facilita la lectura de la información.
-    </p>
+    <section>
+        <h2>Nombre de la tabla</h2>
+        <p>Cómo renombrar una tabla en Excel:</p>
 
-    <hr>
+        <ol>
+            <li>Seleccionamos una celda dentro de la tabla.</li>
+            <li>Se habilita la pestaña <strong>Diseño de tabla</strong>.</li>
+            <li>En la esquina superior izquierda encontramos <strong>Nombre de la tabla</strong>.</li>
+            <li>Renombramos la tabla según el propósito.</li>
+        </ol>
 
-    <!-- =================================================
-         NOMBRE DE LA TABLA
-    ================================================== -->
-    <h2>Asignar nombre a una tabla</h2>
+        <p><strong>Aclaración:</strong> Es importante nombrar las tablas si se van a relacionar
+        con otras.</p>
 
-    <ol>
-        <li>Selecciona cualquier celda de la tabla.</li>
-        <li>Ve al menú <strong>Diseño de tabla</strong>.</li>
-        <li>Ubica el campo <strong>Nombre de la tabla</strong>.</li>
-        <li>Renombra la tabla.</li>
-    </ol>
+        <p>Ejemplos:</p>
+        <ul>
+            <li>tblReporte</li>
+            <li>TablaReporte</li>
+            <li>t_Reporte</li>
+        </ul>
+    </section>
 
-    <p><strong>Ejemplos:</strong></p>
-    <ul>
-        <li>tblReporte</li>
-        <li>TablaVentas</li>
-        <li>t_Usuarios</li>
-    </ul>
+    <section>
+        <h2>Validación de datos</h2>
 
-    <p>
-        Asignar nombres es fundamental cuando se trabajan múltiples tablas
-        o se realizan relaciones y análisis más avanzados.
-    </p>
+        <h3>Permitir “Lista”</h3>
+        <ol>
+            <li>Seleccionamos las celdas a validar.</li>
+            <li>Vamos al menú <strong>Datos</strong>.</li>
+            <li>Damos clic en <strong>Validación de datos</strong>.</li>
+            <li>En la pestaña <strong>Configuración</strong>, elegimos <strong>Lista</strong>.</li>
+            <li>En <strong>Origen</strong> escribimos las opciones separadas por comas.</li>
+        </ol>
 
-    <hr>
+        <p>Ejemplo:</p>
+        <pre>Planeada,En proceso,Completada</pre>
 
-    <!-- =================================================
-         VALIDACIÓN DE DATOS – LISTA
-    ================================================== -->
-    <h2>Validación de datos: Lista</h2>
+        <ol start="8">
+            <li>Configuramos los mensajes de entrada y error.</li>
+            <li>En <strong>Mensaje de error</strong> escribimos el título y mensaje.</li>
+        </ol>
 
-    <ol>
-        <li>Selecciona las celdas a validar.</li>
-        <li>Ve a <strong>Datos → Validación de datos</strong>.</li>
-        <li>En <strong>Permitir</strong>, selecciona <strong>Lista</strong>.</li>
-        <li>En <strong>Origen</strong>, escribe las opciones separadas por coma.</li>
-    </ol>
+        <p>Ejemplo:</p>
+        <pre>
+Título: Error 404
+Mensaje: Se insertó un dato no permitido
+        </pre>
 
-    <p><strong>Ejemplo:</strong></p>
-    <code>Planeada,En proceso,Completada</code>
+        <h3>Permitir “Número entero”</h3>
+        <ol>
+            <li>Seleccionamos las celdas a validar.</li>
+            <li>Menú <strong>Datos</strong> → <strong>Validación de datos</strong>.</li>
+            <li>En <strong>Permitir</strong> seleccionamos <strong>Número entero</strong>.</li>
+            <li>Elegimos la condición (ejemplo: menor que).</li>
+            <li>Definimos el valor máximo (ejemplo: 100).</li>
+            <li>Configuramos el mensaje de error personalizado.</li>
+        </ol>
+    </section>
 
-    <p>
-        Puedes personalizar los mensajes de entrada y error para guiar
-        al usuario y evitar capturas incorrectas.
-    </p>
+    <section>
+        <h2>Check (Formato personalizado)</h2>
+        <p>Formato personalizado usando valores 1 = Sí y 0 = No.</p>
 
-    <hr>
+        <ol>
+            <li>Seleccionamos las celdas.</li>
+            <li>Menú <strong>Inicio</strong> → <strong>Formato de número</strong>.</li>
+            <li>Seleccionamos <strong>Más formatos de número</strong>.</li>
+            <li>Categoría <strong>Personalizada</strong>.</li>
+            <li>Escribimos el siguiente formato:</li>
+        </ol>
 
-    <!-- =================================================
-         VALIDACIÓN – NÚMERO ENTERO
-    ================================================== -->
-    <h2>Validación de datos: Número entero</h2>
+        <pre>[Verde][=1]✔;[Rojo][=0]❌</pre>
 
-    <ol>
-        <li>Selecciona las celdas.</li>
-        <li>Ve a <strong>Datos → Validación de datos</strong>.</li>
-        <li>Selecciona <strong>Número entero</strong>.</li>
-        <li>Define la condición (ejemplo: menor que 100).</li>
-    </ol>
+        <p>Ejemplos adicionales:</p>
+        <pre>
+[Azul][=1]"ACTIVO";[Magenta][=0]"INACTIVO"
+[Verde][=1]"SI";[Rojo][=0]"NO"
+[Rojo][=0]🔒;[Verde][=1]🔓
+        </pre>
 
-    <p>
-        Este tipo de validación evita valores fuera de rango
-        y mantiene consistencia en los datos.
-    </p>
-
-    <hr>
-
-    <!-- =================================================
-         FORMATO PERSONALIZADO CHECK
-    ================================================== -->
-    <h2>Formato personalizado tipo Check (1 = Sí / 0 = No)</h2>
-
-    <p>
-        Para representar valores binarios de forma visual:
-    </p>
-
-    <ol>
-        <li>Selecciona las celdas.</li>
-        <li>Inicio → Formato de número → Más formatos.</li>
-        <li>Categoría: <strong>Personalizada</strong>.</li>
-        <li>Escribe:</li>
-    </ol>
-
-    <code>[Verde][=1]✔;[Rojo][=0]❌</code>
-
-    <p>
-        Este formato mejora la lectura visual y puede adaptarse
-        a distintos contextos.
-    </p>
+        <p><strong>Colores válidos:</strong></p>
+        <ul>
+            <li>Negro</li>
+            <li>Blanco</li>
+            <li>Rojo</li>
+            <li>Verde</li>
+            <li>Azul</li>
+            <li>Amarillo</li>
+            <li>Magenta</li>
+            <li>Cian</li>
+        </ul>
+    </section>
 
     <hr>
 
-    <!-- =================================================
-         RECOMENDACIONES
-    ================================================== -->
-    <h2>Recomendaciones finales</h2>
+    <section>
+        <h2>Recomendaciones</h2>
+        <ol>
+            <li>Si se usarán macros, guardar el archivo como habilitado para macros.</li>
+            <li>Renombrar la hoja de Excel.</li>
+            <li>Dar formato a la tabla.</li>
+            <li>Asignar un nombre a la tabla.</li>
+        </ol>
+    </section>
 
-    <ul>
-        <li>Guardar el archivo como <strong>habilitado para macros</strong> si se usarán.</li>
-        <li>Renombrar las hojas.</li>
-        <li>Aplicar formato a las tablas.</li>
-        <li>Asignar nombres claros a cada tabla.</li>
-    </ul>
+    <footer class="articulo-footer">
+        <p>Autor: Ing. Jaime Hernández Hernández</p>
+        <p>© 2026. Todos los derechos reservados.</p>
+    </footer>
 
-    <hr>
-
-    <!-- =================================================
-         NAVEGACIÓN
-    ================================================== -->
-    <div class="navegacion-articulo">
-        <a href="articulo-003.html">← Artículo anterior</a>
-        <a href="index.html">Volver a artículos</a>
-    </div>
-
-</article>
+</main>
 
 </body>
 </html>
+
