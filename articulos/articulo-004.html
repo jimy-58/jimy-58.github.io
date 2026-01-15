@@ -2,18 +2,16 @@
 <html lang="es">
 <head>
     <!-- =====================================================
-         METADATOS BÁSICOS DEL DOCUMENTO
+         METADATOS DEL ARTÍCULO
     ====================================================== -->
     <meta charset="UTF-8">
-    <title>Artículo 004 – Curso básico de Excel | Revista digital de ingeniería</title>
+    <title>Curso básico de Excel | Revista digital de ingeniería</title>
 
     <meta name="author" content="Ing. Jaime Hernández Hernández">
-    <meta name="description" content="Este curso básico de Excel está diseñado para personas que desean crear tablas más técnicas, profesionales y funcionales utilizando herramientas nativas de Excel, validaciones de datos y formatos personalizados.
-
-El objetivo es que el participante no solo capture información, sino que construya hojas de cálculo estructuradas, claras y listas para procesos administrativos, técnicos o de análisis..">
+    <meta name="description" content="Curso básico de Excel enfocado en tablas profesionales, validación de datos y formatos personalizados.">
 
     <!-- =====================================================
-         HOJA DE ESTILOS GLOBAL
+         ESTILOS
     ====================================================== -->
     <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -24,152 +22,183 @@ El objetivo es que el participante no solo capture información, sino que constr
      MENÚ DE NAVEGACIÓN GLOBAL
 ====================================================== -->
 <nav class="menu">
-    <a href="/index.html">Inicio</a>
-    <a href="/articulos/index.html">Artículos</a>
-    <a href="/index.html#autor">Sobre el autor</a>
+    <div class="menu-container">
+        <span class="logo-text">Jaime Hernández</span>
+
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+        <div class="menu-links" id="menuLinks">
+            <a href="../index.html">Inicio</a>
+            <a href="index.html">Artículos</a>
+            <a href="../sobre-el-autor.html">Sobre el autor</a>
+        </div>
+    </div>
 </nav>
 
 <!-- =====================================================
-     CONTENIDO PRINCIPAL
+     CONTENIDO DEL ARTÍCULO
 ====================================================== -->
-<main>
+<article class="articulo-detalle">
+
+    <h1>Curso básico de Excel</h1>
+
+    <div class="meta">
+        Autor: <strong>Ing. Jaime Hernández Hernández</strong><br>
+        Publicado: <strong>15/01/2026</strong>
+    </div>
 
     <!-- =================================================
-         ARTÍCULO
+         INTRODUCCIÓN
     ================================================== -->
-    <article class="articulo-detalle">
+    <h2>Introducción</h2>
 
-        <!-- TÍTULO PRINCIPAL -->
-        <h1>Curso básico de Excel</h1>
+    <p>
+        En este artículo se presentan conceptos básicos de Excel orientados a la creación
+        de tablas más técnicas, profesionales y funcionales, utilizando herramientas
+        nativas como formatos de tabla, validación de datos y formatos personalizados. 
 
-        <!-- METADATA DEL ARTÍCULO -->
-        <div class="meta">
-            Autor: Ing. Jaime Hernández Hernández <br>
-            Publicado: 2026
-        </div>
+        El objetivo es que el participante no solo capture información, sino que construya 
+        hojas de cálculo estructuradas, claras y listas para procesos administrativos, técnicos 
+        o de análisis.
 
-        <!-- =================================================
-             CUERPO DEL ARTÍCULO
-        ================================================== -->
+                
+    </p>
 
-        <h2>Dar formato a la tabla</h2>
-        <p>Para dar formato a la tabla que ya esté creada:</p>
+    <!-- =================================================
+         FORMATO DE TABLA
+    ================================================== -->
+    <h2>Dar formato a la tabla</h2>
 
-        <ol>
-            <li>Seleccionamos toda nuestra tabla considerando columnas y filas.</li>
-            <li>Menú de Excel en <strong>Inicio</strong>.</li>
-            <li>Seleccionamos <strong>Dar formato como tabla</strong>.</li>
-            <li>Elegimos el estilo deseado (claro, medio, oscuro o colores básicos).</li>
-            <li>Se mostrará la ventana <em>Dar formato como tabla</em>.</li>
-            <li>Marcamos <strong>La tabla tiene encabezados</strong>.</li>
-        </ol>
+    <p>Para dar formato a una tabla ya creada:</p>
 
-        <h2>Nombre de la tabla</h2>
-        <p>Cómo renombrar una tabla:</p>
+    <ol>
+        <li>Seleccionar toda la tabla (filas y columnas).</li>
+        <li>Ir al menú <strong>Inicio</strong>.</li>
+        <li>Seleccionar <strong>Dar formato como tabla</strong>.</li>
+        <li>Elegir el estilo deseado.</li>
+        <li>Confirmar la selección en la ventana emergente.</li>
+        <li>Marcar <strong>La tabla tiene encabezados</strong>.</li>
+    </ol>
 
-        <ol>
-            <li>Seleccionamos una celda de la tabla.</li>
-            <li>Se habilita la pestaña <strong>Diseño de tabla</strong>.</li>
-            <li>Ubicamos <strong>Nombre de la tabla</strong> en la esquina superior izquierda.</li>
-            <li>Renombramos la tabla.</li>
-        </ol>
+    <!-- =================================================
+         NOMBRE DE LA TABLA
+    ================================================== -->
+    <h2>Nombre de la tabla</h2>
 
-        <p><strong>Aclaración:</strong> Es importante asignar un nombre si se trabajará con múltiples tablas relacionadas.</p>
+    <p>Cómo renombrar una tabla:</p>
 
-        <p>Ejemplos:</p>
-        <ul>
-            <li>tblReporte</li>
-            <li>TablaReporte</li>
-            <li>t_Reporte</li>
-        </ul>
+    <ol>
+        <li>Seleccionar una celda de la tabla.</li>
+        <li>Ir a la pestaña <strong>Diseño de tabla</strong>.</li>
+        <li>Ubicar <strong>Nombre de la tabla</strong>.</li>
+        <li>Asignar un nombre representativo.</li>
+    </ol>
 
-        <h2>Validación de datos</h2>
+    <p><strong>Aclaración:</strong> Nombrar las tablas es fundamental cuando se trabaja con múltiples tablas relacionadas.</p>
 
-        <h3>Permitir “Lista”</h3>
-        <ol>
-            <li>Seleccionamos las celdas a validar.</li>
-            <li>Menú <strong>Datos</strong>.</li>
-            <li><strong>Validación de datos</strong>.</li>
-            <li>Pestaña <strong>Configuración</strong>.</li>
-            <li>En <strong>Permitir</strong> seleccionamos <strong>Lista</strong>.</li>
-            <li>En <strong>Origen</strong> escribimos las opciones separadas por coma.</li>
-        </ol>
+    <ul>
+        <li>tblReporte</li>
+        <li>TablaReporte</li>
+        <li>t_Reporte</li>
+    </ul>
 
-        <pre>Planeada,En proceso,Completada</pre>
+    <!-- =================================================
+         VALIDACIÓN DE DATOS
+    ================================================== -->
+    <h2>Validación de datos</h2>
 
-        <ol start="7">
-            <li>Configuramos <strong>Mensaje de entrada</strong> y <strong>Mensaje de error</strong>.</li>
-        </ol>
+    <h3>Permitir “Lista”</h3>
 
-        <pre>
-Título: Error 404
-Mensaje: Se insertó un dato no permitido
-        </pre>
+    <ol>
+        <li>Seleccionar las celdas a validar.</li>
+        <li>Menú <strong>Datos</strong>.</li>
+        <li><strong>Validación de datos</strong>.</li>
+        <li>Pestaña <strong>Configuración</strong>.</li>
+        <li>En <strong>Permitir</strong>, seleccionar <strong>Lista</strong>.</li>
+        <li>Definir las opciones en <strong>Origen</strong>.</li>
+    </ol>
 
-        <h3>Permitir “Número entero”</h3>
-        <ol>
-            <li>Seleccionamos las celdas.</li>
-            <li>Menú <strong>Datos</strong> → <strong>Validación de datos</strong>.</li>
-            <li>En <strong>Permitir</strong> seleccionamos <strong>Número entero</strong>.</li>
-            <li>En <strong>Datos</strong> elegimos la condición (ejemplo: menor que).</li>
-            <li>Definimos el valor máximo (ejemplo: 100).</li>
-            <li>Configuramos el mensaje de error.</li>
-        </ol>
+    <p><strong>Ejemplo:</strong></p>
+    <p><code>Planeada,En proceso,Completada</code></p>
 
-        <h2>Check (Formato personalizado)</h2>
-        <p>Formato personalizado usando valores 1 = sí y 0 = no:</p>
+    <p>Mensaje de error personalizado:</p>
+    <ul>
+        <li><strong>Título:</strong> Error 404</li>
+        <li><strong>Mensaje:</strong> Se insertó un dato no permitido</li>
+    </ul>
 
-        <ol>
-            <li>Seleccionamos las celdas.</li>
-            <li>Menú <strong>Inicio</strong>.</li>
-            <li>Formato de número → <strong>Más formatos de número</strong>.</li>
-            <li>Categoría <strong>Personalizada</strong>.</li>
-            <li>Escribimos:</li>
-        </ol>
+    <h3>Permitir “Número entero”</h3>
 
-        <pre>[Verde][=1]✔;[Rojo][=0]❌</pre>
+    <ol>
+        <li>Seleccionar las celdas.</li>
+        <li>Datos → Validación de datos.</li>
+        <li>Permitir: <strong>Número entero</strong>.</li>
+        <li>Condición: menor que.</li>
+        <li>Valor máximo: 100.</li>
+    </ol>
 
-        <p>Ejemplos:</p>
-        <pre>
-[Azul][=1]"ACTIVO";[Magenta][=0]"INACTIVO"
-[Verde][=1]"SI";[Rojo][=0]"NO"
-[Rojo][=0]🔒;[Verde][=1]🔓
-        </pre>
+    <!-- =================================================
+         CHECK PERSONALIZADO
+    ================================================== -->
+    <h2>Check con formato personalizado</h2>
 
-        <p><strong>Colores válidos:</strong></p>
-        <ul>
-            <li>Negro</li>
-            <li>Blanco</li>
-            <li>Rojo</li>
-            <li>Verde</li>
-            <li>Azul</li>
-            <li>Amarillo</li>
-            <li>Magenta</li>
-            <li>Cian</li>
-        </ul>
+    <p>Formato visual usando valores 1 y 0:</p>
 
-        <h2>Recomendaciones</h2>
-        <ol>
-            <li>Si se utilizarán macros, guardar el archivo como habilitado para macros.</li>
-            <li>Renombrar la hoja de Excel.</li>
-            <li>Dar formato a la tabla.</li>
-            <li>Asignar un nombre a la tabla.</li>
-        </ol>
+    <p><code>[Verde][=1]✔;[Rojo][=0]❌</code></p>
 
-        <!-- =================================================
-             NAVEGACIÓN INFERIOR
-        ================================================== -->
-        <div class="navegacion-articulo">
-            <a href="/articulos/index.html">← Volver a artículos</a>
-            |
-            <a href="/index.html">Volver a página principal</a>
-        </div>
+    <p>Ejemplos adicionales:</p>
 
-    </article>
+    <ul>
+        <li><code>[Azul][=1]"ACTIVO";[Magenta][=0]"INACTIVO"</code></li>
+        <li><code>[Verde][=1]"SI";[Rojo][=0]"NO"</code></li>
+        <li><code>[Rojo][=0]🔒;[Verde][=1]🔓</code></li>
+    </ul>
 
-</main>
+    <p><strong>Colores válidos:</strong></p>
+    <ul>
+        <li>Negro</li>
+        <li>Blanco</li>
+        <li>Rojo</li>
+        <li>Verde</li>
+        <li>Azul</li>
+        <li>Amarillo</li>
+        <li>Magenta</li>
+        <li>Cian</li>
+    </ul>
+
+    <!-- =================================================
+         RECOMENDACIONES
+    ================================================== -->
+    <h2>Recomendaciones</h2>
+
+    <ol>
+        <li>Guardar el archivo como habilitado para macros si se usarán.</li>
+        <li>Renombrar las hojas de Excel.</li>
+        <li>Aplicar formato de tabla.</li>
+        <li>Asignar nombre a las tablas.</li>
+    </ol>
+
+    <!-- =================================================
+         NAVEGACIÓN
+    ================================================== -->
+    <div class="navegacion-articulo">
+        <a href="index.html">← Volver a artículos</a>
+        <a href="../index.html">Volver a inicio</a>
+    </div>
+
+</article>
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+<script>
+    function toggleMenu() {
+        document.getElementById("menuLinks").classList.toggle("active");
+    }
+</script>
 
 </body>
 </html>
+
 
 
