@@ -227,4 +227,18 @@ a:hover {
     font-weight: normal;
 }
 
+/* =====================================================
+   IMAGEN DE EXCEL
+===================================================== */
+
+.imagen-articulo {
+    display: block;
+    max-width: 100%;
+    width: 720px;
+    margin: 20px auto 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+
 
