@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,108 +6,10 @@
 
     <link rel="stylesheet" href="../../css/style.css">
 </head>
-<script>
-const totalModulos = 5;
-const moduloActual = 1;
 
-// Guardar progreso
-localStorage.setItem("progresoCurso", moduloActual);
-
-// Obtener progreso guardado
-const progresoGuardado = localStorage.getItem("progresoCurso") || 1;
-
-const progreso = (progresoGuardado / totalModulos) * 100;
-
-document.getElementById("barraProgreso").style.width = progreso + "%";
-document.getElementById("textoProgreso").innerText =
-    "Módulo " + progresoGuardado + " de " + totalModulos;
-</script>
-
-<script>
-const moduloActual = 1;
-
-// Guardar progreso al completar
-function completarModulo() {
-    localStorage.setItem("progresoCurso", moduloActual);
-
-    alert("✅ Módulo completado. Puedes continuar al siguiente.");
-
-    // Opcional: redirigir automáticamente
-    window.location.href = "modulo-2.html";
-}
-</script>
-<!-- =====================================================
-     CANDADOS DE MODULO
-====================================================== -->
-    <script>
-const progreso = parseInt(localStorage.getItem("progresoCurso")) || 0;
-
-// Total de módulos
-const totalModulos = 5;
-
-for (let i = 1; i <= totalModulos; i++) {
-
-    const modulo = document.getElementById("mod" + i);
-
-    // Si el módulo está dentro del progreso permitido → desbloquear
-    if (i <= progreso + 1) {
-        modulo.classList.remove("bloqueado");
-
-        // Quitar candado del título
-        const titulo = modulo.querySelector("h3");
-        titulo.textContent = "Módulo " + i;
-    }
-}
-</script>
-<!-- =====================================================
-     CUANDO SE APLICA BOTON DE COMPLETADO
-====================================================== -->
-    <script>
-const moduloActual = 1; // 👈 CAMBIA ESTE NÚMERO EN CADA ARCHIVO
-
-const btn = document.getElementById("btnCompletar");
-
-// Verificar si ya está completado
-const progreso = parseInt(localStorage.getItem("progresoCurso")) || 0;
-
-if (progreso >= moduloActual) {
-    marcarComoCompletado();
-}
-
-// Función al hacer clic
-function completarModulo() {
-
-    // Solo guardar si es progreso nuevo
-    if (progreso < moduloActual) {
-        localStorage.setItem("progresoCurso", moduloActual);
-    }
-
-    marcarComoCompletado();
-
-    alert("✅ Módulo completado");
-
-    // Redirigir después de 1 segundo
-    setTimeout(() => {
-        window.location.href = "modulo-" + (moduloActual + 1) + ".html";
-    }, 1000);
-}
-
-// Cambiar estado visual
-function marcarComoCompletado() {
-    btn.textContent = "Completado ✅";
-    btn.classList.add("completado");
-    btn.disabled = true;
-}
-</script>
-
-<!-- =====================================================
-     
-====================================================== -->  
 <body>
 
-<!-- =====================================================
-     MENÚ DE NAVEGACIÓN GLOBAL
-====================================================== -->
+<!-- ================= MENÚ ================= -->
 <nav class="menu">
     <div class="menu-container">
         <span class="logo-text">Jaime Hernández</span>
@@ -122,28 +23,21 @@ function marcarComoCompletado() {
         </div>
     </div>
 </nav>
-<!-- =====================================================
-     MODULO 1
-====================================================== -->
 
+<!-- ================= CONTENIDO ================= -->
 <main>
-
 <article class="articulo-detalle">
 
 <h1>Módulo 1: Fundamentos y estructura de datos</h1>
 
-<!-- =====================================================
-     BARRA DE PROGRESO
-====================================================== -->
+<!-- ================= BARRA ================= -->
 <div class="progreso-curso">
     <div class="barra">
         <div class="progreso" id="barraProgreso"></div>
     </div>
     <p id="textoProgreso">Módulo 1 de 5</p>
 </div>
-<!-- =====================================================
-     BARRA
-====================================================== -->
+
 <p>
 En este módulo aprenderás a organizar correctamente la información en Excel,
 evitando errores comunes y preparando los datos para análisis.
@@ -171,17 +65,13 @@ evitando errores comunes y preparando los datos para análisis.
 <pre>
 =Cantidad * Precio
 </pre>
-    
-        <!-- ==================================================
-         BOTON COMPLETADO
-    ================================================== -->
-<button id="btnCompletar" class="btn-completar" onclick="completarModulo()">
+
+<!-- ================= BOTÓN ================= -->
+<button id="btnCompletar" class="btn-completar">
     ✔ Marcar módulo como completado
 </button>
-    
-    <!-- ==================================================
-         NAVEGACIÓN DEL MODULO
-    ================================================== -->
+
+<!-- ================= NAVEGACIÓN ================= -->
 <div class="navegacion-curso">
 
     <a href="../articulo-005.html" class="btn-curso secundario">
@@ -198,18 +88,62 @@ evitando errores comunes y preparando los datos para análisis.
 
 </div>
 
-    <!-- ==================================================
-         N
-    ================================================== -->
 </article>
-
 </main>
-<script>
-    function toggleMenu() {
-        document.getElementById("menuLinks").classList.toggle("active");
-    }
-</script> 
 
+<!-- ================= SCRIPTS ================= -->
+<script>
+function toggleMenu() {
+    document.getElementById("menuLinks").classList.toggle("active");
+}
+
+// CONFIG
+const moduloActual = 1;
+const totalModulos = 5;
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const btn = document.getElementById("btnCompletar");
+
+    // Obtener progreso
+    let progreso = parseInt(localStorage.getItem("progresoCurso")) || 0;
+
+    // ===== BARRA DE PROGRESO =====
+    const porcentaje = (progreso / totalModulos) * 100;
+
+    document.getElementById("barraProgreso").style.width = porcentaje + "%";
+    document.getElementById("textoProgreso").innerText =
+        "Módulo " + progreso + " de " + totalModulos;
+
+    // ===== ESTADO DEL BOTÓN =====
+    if (progreso >= moduloActual) {
+        marcarComoCompletado();
+    }
+
+    // ===== CLICK BOTÓN =====
+    btn.addEventListener("click", () => {
+
+        if (progreso < moduloActual) {
+            localStorage.setItem("progresoCurso", moduloActual);
+        }
+
+        marcarComoCompletado();
+
+        alert("✅ Módulo completado");
+
+        setTimeout(() => {
+            window.location.href = "modulo-2.html";
+        }, 1000);
+    });
+
+    function marcarComoCompletado() {
+        btn.textContent = "Completado ✅";
+        btn.classList.add("completado");
+        btn.disabled = true;
+    }
+
+});
+</script>
 
 </body>
 </html>
