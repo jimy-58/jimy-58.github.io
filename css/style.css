@@ -366,10 +366,12 @@ a:hover {
 }
 
 .btn-curso.inicio {
-    background-color: #444;
-    color: white;
+    background-color: transparent;
+    border: 2px solid #00c3ff;
+    color: #00c3ff;
 }
 
 .btn-curso.inicio:hover {
-    background-color: #222;
+    background-color: #00c3ff;
+    color: #000;
 }
