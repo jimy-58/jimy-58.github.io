@@ -7,7 +7,16 @@
 
     <link rel="stylesheet" href="../../css/style.css">
 </head>
+<script>
+const totalModulos = 5;
+const moduloActual = 1; // cambia en cada módulo
 
+const progreso = (moduloActual / totalModulos) * 100;
+
+document.getElementById("barraProgreso").style.width = progreso + "%";
+document.getElementById("textoProgreso").innerText =
+    "Módulo " + moduloActual + " de " + totalModulos;
+</script>
 <body>
 
 <!-- =====================================================
