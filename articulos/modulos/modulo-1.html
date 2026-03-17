@@ -37,7 +37,33 @@ function completarModulo() {
     window.location.href = "modulo-2.html";
 }
 </script>
-    
+<!-- =====================================================
+     CANDADOS DE MODULO
+====================================================== -->
+    <script>
+const progreso = parseInt(localStorage.getItem("progresoCurso")) || 0;
+
+// Total de módulos
+const totalModulos = 5;
+
+for (let i = 1; i <= totalModulos; i++) {
+
+    const modulo = document.getElementById("mod" + i);
+
+    // Si el módulo está dentro del progreso permitido → desbloquear
+    if (i <= progreso + 1) {
+        modulo.classList.remove("bloqueado");
+
+        // Quitar candado del título
+        const titulo = modulo.querySelector("h3");
+        titulo.textContent = "Módulo " + i;
+    }
+}
+</script>
+
+<!-- =====================================================
+     
+====================================================== -->  
 <body>
 
 <!-- =====================================================
