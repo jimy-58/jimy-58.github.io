@@ -291,7 +291,7 @@ a:hover {
 }
 
 /* =====================================================
-   BOTON SIGUIENTE MODULO
+   NAVEGACIÓN GLOBAL DE BOTONES
 ===================================================== */
 .navegacion-curso {
     display: flex;
@@ -306,72 +306,30 @@ a:hover {
     border-radius: 10px;
     text-decoration: none;
     font-weight: 600;
-    transition: all 0.3s ease;
     font-size: 14px;
+    transition: all 0.3s ease;
 }
 
-/* Botón volver */
-.btn-curso.volver {
-    background-color: transparent;
-    border: 2px solid #00c3ff;
-    color: #00c3ff;
-}
-
-.btn-curso.volver:hover {
-    background-color: #00c3ff;
-    color: #000;
-}
-
-/* Botón siguiente */
-.btn-curso.siguiente {
+/* 🔵 ESTILO PRINCIPAL (como "Siguiente módulo") */
+.btn-curso.principal {
     background: linear-gradient(135deg, #00c3ff, #2979ff);
     color: white;
     box-shadow: 0 4px 15px rgba(0, 195, 255, 0.3);
 }
 
-.btn-curso.siguiente:hover {
+.btn-curso.principal:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(0, 195, 255, 0.5);
 }
 
-/* =====================================================
-   BOTON DE NAVEGACION DE CADA ARTICULO
-===================================================== */
-.navegacion-curso {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 50px;
-    flex-wrap: wrap;
-}
-
-.btn-curso {
-    padding: 12px 22px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    font-size: 14px;
-}
-
-.btn-curso.volver {
+/* 🔲 ESTILO SECUNDARIO */
+.btn-curso.secundario {
     background-color: transparent;
     border: 2px solid #00c3ff;
     color: #00c3ff;
 }
 
-.btn-curso.volver:hover {
-    background-color: #00c3ff;
-    color: #000;
-}
-
-.btn-curso.inicio {
-    background-color: transparent;
-    border: 2px solid #00c3ff;
-    color: #00c3ff;
-}
-
-.btn-curso.inicio:hover {
+.btn-curso.secundario:hover {
     background-color: #00c3ff;
     color: #000;
 }
