@@ -362,3 +362,24 @@ a:hover {
     font-size: 14px;
     color: #555;
 }
+
+/* =====================================================
+   BOTON COMPLETAR MODULO
+===================================================== */
+.btn-completar {
+    display: block;
+    margin: 30px auto;
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #00e676, #00c853);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-completar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 200, 83, 0.4);
+}
