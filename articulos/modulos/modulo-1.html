@@ -23,6 +23,21 @@ document.getElementById("barraProgreso").style.width = progreso + "%";
 document.getElementById("textoProgreso").innerText =
     "Módulo " + progresoGuardado + " de " + totalModulos;
 </script>
+
+<script>
+const moduloActual = 1;
+
+// Guardar progreso al completar
+function completarModulo() {
+    localStorage.setItem("progresoCurso", moduloActual);
+
+    alert("✅ Módulo completado. Puedes continuar al siguiente.");
+
+    // Opcional: redirigir automáticamente
+    window.location.href = "modulo-2.html";
+}
+</script>
+    
 <body>
 
 <!-- =====================================================
