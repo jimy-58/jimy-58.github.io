@@ -60,6 +60,46 @@ for (let i = 1; i <= totalModulos; i++) {
     }
 }
 </script>
+<!-- =====================================================
+     CUANDO SE APLICA BOTON DE COMPLETADO
+====================================================== -->
+    <script>
+const moduloActual = 1; // 👈 CAMBIA ESTE NÚMERO EN CADA ARCHIVO
+
+const btn = document.getElementById("btnCompletar");
+
+// Verificar si ya está completado
+const progreso = parseInt(localStorage.getItem("progresoCurso")) || 0;
+
+if (progreso >= moduloActual) {
+    marcarComoCompletado();
+}
+
+// Función al hacer clic
+function completarModulo() {
+
+    // Solo guardar si es progreso nuevo
+    if (progreso < moduloActual) {
+        localStorage.setItem("progresoCurso", moduloActual);
+    }
+
+    marcarComoCompletado();
+
+    alert("✅ Módulo completado");
+
+    // Redirigir después de 1 segundo
+    setTimeout(() => {
+        window.location.href = "modulo-" + (moduloActual + 1) + ".html";
+    }, 1000);
+}
+
+// Cambiar estado visual
+function marcarComoCompletado() {
+    btn.textContent = "Completado ✅";
+    btn.classList.add("completado");
+    btn.disabled = true;
+}
+</script>
 
 <!-- =====================================================
      
