@@ -9,13 +9,19 @@
 </head>
 <script>
 const totalModulos = 5;
-const moduloActual = 1; // cambia en cada módulo
+const moduloActual = 1;
 
-const progreso = (moduloActual / totalModulos) * 100;
+// Guardar progreso
+localStorage.setItem("progresoCurso", moduloActual);
+
+// Obtener progreso guardado
+const progresoGuardado = localStorage.getItem("progresoCurso") || 1;
+
+const progreso = (progresoGuardado / totalModulos) * 100;
 
 document.getElementById("barraProgreso").style.width = progreso + "%";
 document.getElementById("textoProgreso").innerText =
-    "Módulo " + moduloActual + " de " + totalModulos;
+    "Módulo " + progresoGuardado + " de " + totalModulos;
 </script>
 <body>
 
