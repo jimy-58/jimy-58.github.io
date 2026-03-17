@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Módulo 4 | Curso de Excel</title>
+
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body>
+
+<!-- ================= MENÚ ================= -->
+<nav class="menu">
+    <div class="menu-container">
+        <span class="logo-text">Jaime Hernández</span>
+
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+        <div class="menu-links" id="menuLinks">
+            <a href="../../index.html">Inicio</a>
+            <a href="../index.html">Artículos</a>
+            <a href="../articulo-005.html">Curso</a>
+        </div>
+    </div>
+</nav>
+
+<!-- ================= CONTENIDO ================= -->
+<main>
+<article class="articulo-detalle">
+
+<h1>Módulo 4: Dashboards en Excel</h1>
+
+<!-- ================= BARRA ================= -->
+<div class="progreso-curso">
+    <div class="barra">
+        <div class="progreso" id="barraProgreso"></div>
+    </div>
+    <p id="textoProgreso">Módulo 4 de 5</p>
+</div>
+
+<p>
+En este módulo aprenderás a crear dashboards interactivos que permitan
+visualizar información de manera clara y profesional para la toma de decisiones.
+</p>
+
+<h2>Contenido</h2>
+<ul>
+    <li>Diseño de dashboards</li>
+    <li>Uso de gráficos avanzados</li>
+    <li>Segmentadores (slicers)</li>
+    <li>Indicadores clave (KPIs)</li>
+</ul>
+
+<h2>Ejercicio práctico</h2>
+<p>
+Crear un dashboard que muestre:
+</p>
+
+<ul>
+    <li>Ventas por mes</li>
+    <li>Ventas por categoría</li>
+    <li>Tendencias</li>
+</ul>
+
+<pre>
+Insertar → Gráfico → Segmentación de datos
+</pre>
+
+<!-- ================= BOTÓN ================= -->
+<button id="btnCompletar" class="btn-completar">
+    ✔ Marcar módulo como completado
+</button>
+
+<!-- ================= NAVEGACIÓN ================= -->
+<div class="navegacion-curso">
+
+    <a href="../articulo-005.html" class="btn-curso secundario">
+        ← Volver al curso
+    </a>
+
+    <a href="../../index.html" class="btn-curso secundario">
+        Página principal
+    </a>
+
+    <a href="modulo-5.html" class="btn-curso principal">
+        Siguiente módulo →
+    </a>
+
+</div>
+
+</article>
+</main>
+
+<!-- ================= SCRIPTS ================= -->
+<script>
+function toggleMenu() {
+    document.getElementById("menuLinks").classList.toggle("active");
+}
+
+// CONFIG
+const moduloActual = 4;
+const totalModulos = 5;
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const btn = document.getElementById("btnCompletar");
+
+    let progreso = parseInt(localStorage.getItem("progresoCurso")) || 0;
+
+    // ===== BARRA =====
+    const porcentaje = (progreso / totalModulos) * 100;
+
+    document.getElementById("barraProgreso").style.width = porcentaje + "%";
+    document.getElementById("textoProgreso").innerText =
+        "Módulo " + progreso + " de " + totalModulos;
+
+    // ===== ESTADO BOTÓN =====
+    if (progreso >= moduloActual) {
+        marcarComoCompletado();
+    }
+
+    // ===== CLICK =====
+    btn.addEventListener("click", () => {
+
+        if (progreso < moduloActual) {
+            localStorage.setItem("progresoCurso", moduloActual);
+        }
+
+        marcarComoCompletado();
+
+        alert("✅ Módulo completado");
+
+        setTimeout(() => {
+            window.location.href = "modulo-5.html";
+        }, 1000);
+    });
+
+    function marcarComoCompletado() {
+        btn.textContent = "Completado ✅";
+        btn.classList.add("completado");
+        btn.disabled = true;
+    }
+
+});
+</script>
+
+</body>
+</html>
