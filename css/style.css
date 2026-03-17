@@ -401,3 +401,13 @@ a:hover {
     font-size: 12px;
     color: red;
 }
+/* =====================================================
+   BOTON ESTADO COMPLETADO
+===================================================== */
+/* Estado completado */
+.btn-completar.completado {
+    background: #555;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
