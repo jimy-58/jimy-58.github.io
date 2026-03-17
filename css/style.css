@@ -333,3 +333,43 @@ a:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(0, 195, 255, 0.5);
 }
+
+/* =====================================================
+   BOTON DE NAVEGACION DE CADA ARTICULO
+===================================================== */
+.navegacion-curso {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.btn-curso {
+    padding: 12px 22px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.btn-curso.volver {
+    background-color: transparent;
+    border: 2px solid #00c3ff;
+    color: #00c3ff;
+}
+
+.btn-curso.volver:hover {
+    background-color: #00c3ff;
+    color: #000;
+}
+
+.btn-curso.inicio {
+    background-color: #444;
+    color: white;
+}
+
+.btn-curso.inicio:hover {
+    background-color: #222;
+}
