@@ -12,6 +12,35 @@
 
 </head>
 
+    <!-- =====================================================
+     PROGRESO DE MODULOS
+====================================================== -->
+
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const progreso = parseInt(localStorage.getItem("progresoCurso")) || 0;
+    const totalModulos = 5;
+
+    for (let i = 1; i <= totalModulos; i++) {
+
+        const modulo = document.getElementById("mod" + i);
+
+        if (!modulo) continue;
+
+        // DESBLOQUEAR
+        if (i <= progreso + 1) {
+            modulo.classList.remove("bloqueado");
+
+            // Quitar 🔒 del título
+            const titulo = modulo.querySelector("h3");
+            titulo.textContent = "Módulo " + i;
+        }
+    }
+
+});
+</script>
+
 <body>
 
 <!-- =====================================================
@@ -81,7 +110,7 @@
     📥 Descargar material del curso
 </a>
 <!-- =====================================================
-     Diagnostico, ebcuesta
+     Diagnostico, encuesta
 ====================================================== -->
 
     <h2>Diagnóstico de necesidades</h2>
@@ -92,7 +121,7 @@
         <li>Procesos manuales repetitivos</li>
         <li>Necesidad de dashboards</li>
     </ul>
-</a>
+
 <!-- =====================================================
      Estructura y modulos
 ====================================================== -->
