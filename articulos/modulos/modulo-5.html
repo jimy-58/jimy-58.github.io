@@ -6,7 +6,32 @@
 
     <link rel="stylesheet" href="../../css/style.css">
 </head>
+<!-- ==================================================
+     VALIDACION INICIO DE SESION
+================================================== -->
+<script type="module">
 
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCGS7KkAV4IGCuL2M1YzY-L6T8BCCCO9Us",
+  authDomain: "curso-excel-e9718.firebaseapp.com",
+  projectId: "curso-excel-e9718",
+  appId: "1:279334418560:web:63b7408208126c14390e65"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+// 🔐 PROTECCIÓN
+onAuthStateChanged(auth, (user) => {
+  if (!user) {
+    window.location.href = "../../login.html";
+  }
+});
+
+</script>
 <body>
 
 <!-- ================= MENÚ ================= -->
